@@ -1,2 +1,2 @@
 # MLFromScratch
-Trying to implement all ML models from scratch
+Trying to implement all ML models from scratch in Python

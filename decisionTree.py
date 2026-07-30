@@ -92,6 +92,7 @@ class DecisionTreeClassifier:
         return split_idx, split_threshold
 
     def predict(self,X):
+        # getting values for each sample in X
         return np.array([self._traverse_tree(x, self.root) for x in X])
 
     def _traverse_tree(self, x, node):
