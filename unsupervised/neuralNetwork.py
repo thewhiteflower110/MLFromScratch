@@ -20,7 +20,6 @@ class TwoLayerNeuralNetwork:
     
     def forward(self, X):
         self.Z1 = np.dot(self.w1.T,X) + self.b1
-        # applying activation function
         self.A1 = self._relu(self.Z1)
         self.Z2 = np.dot(self.w2.T,self.A1) + self.b2
         self.A2 = self.sigmoid(self.Z2)
@@ -50,7 +49,6 @@ class TwoLayerNeuralNetwork:
         Y_hat = np.clip(Y_hat, eps, 1 - eps)
         loss = - (1 / m) * np.sum(Y * np.log(Y_hat) + (1 - Y) * np.log(1 - Y_hat))
         return loss
-
 
     def fit(self, X,y,epochs):
         for epoch in epochs:
